@@ -38,7 +38,6 @@ export const NewComponent = (props: NewComponentType) => {
                 </thead>
                 <tbody>
                 {topCars.map((car, index) => {
-                    //debugger
                     return (
                         <tr key={index}>
                             <td>{index + 1}</td>
