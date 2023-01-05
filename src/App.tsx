@@ -28,7 +28,7 @@ function App() {
     //     console.log('Hi, Im Lera')
     // }
 
-    const button1Foo = (name: string, age:number, address:string) => {
+    /*const button1Foo = (name: string, age:number, address:string) => {
         console.log(name, age, address)
     }
     const button2Foo = (name: string, age:number) => {
@@ -36,13 +36,27 @@ function App() {
     }
     const button3Foo = () => {
         console.log('stupid button message')
-    }
+    }*/
 
+    let [a, setA] = useState(0)
+
+    const onClickHandler = () => {
+        setA(++a)
+        console.log(a)
+    }
+    const onClickNuller = () => {
+        setA(a=0)
+        console.log(a)
+    }
     return (
         <div className='App'>
-            <Button name={'YouTubeChannel-1'} callBack={() => button1Foo('Roman', 28, 'live in Minsk')}/>
+            <h1>{a}</h1>
+            <button onClick={onClickHandler}>+1</button>
+            <button onClick={onClickNuller}>0</button>
+
+           {/* <Button name={'YouTubeChannel-1'} callBack={() => button1Foo('Roman', 28, 'live in Minsk')}/>
             <Button name={'YouTubeChannel-2'} callBack={() => button2Foo('Ivan', 30)}/>
-            <Button name={'StupidButton'} callBack={button3Foo}/>
+            <Button name={'StupidButton'} callBack={button3Foo}/>*/}
 
             {/*<button>My Youtube Channel#3</button>*/}
             {/*<button>My Youtube Channel#3</button>*/}
