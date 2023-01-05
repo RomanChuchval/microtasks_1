@@ -4,6 +4,7 @@ import {Header} from "./Components/Header";
 import {Body} from "./Components/Body";
 import {Footer} from "./Components/Footer";
 import {NewComponent} from "./Components/NewComponent";
+import {Button} from "./Components/Button";
 
 function App() {
 
@@ -27,22 +28,36 @@ function App() {
     //     console.log('Hi, Im Lera')
     // }
 
-    const onClickHandler = (name:string) => {
-        console.log(`Hello it's ${name}`)
+    const button1Foo = (name: string, age:number, address:string) => {
+        console.log(name, age, address)
+    }
+    const button2Foo = (name: string, age:number) => {
+        console.log(name, age)
+    }
+    const button3Foo = () => {
+        console.log('stupid button message')
     }
 
     return (
-            <div className='App'>
-                <button onClick={() =>onClickHandler('Vasya')}>My Youtube Channel#2</button>
-                <button onClick={() =>onClickHandler('Roman')}>My Youtube Channel#3</button>
+        <div className='App'>
+            <Button name={'YouTubeChannel-1'} callBack={() => button1Foo('Roman', 28, 'live in Minsk')}/>
+            <Button name={'YouTubeChannel-2'} callBack={() => button2Foo('Ivan', 30)}/>
+            <Button name={'StupidButton'} callBack={button3Foo}/>
 
-            </div>
+            {/*<button>My Youtube Channel#3</button>*/}
+            {/*<button>My Youtube Channel#3</button>*/}
+
+        </div>
     );
 }
 
 export default App;
 
-{/*<NewComponent students={students}/>*/}
-{/*<Header titleForHeader={'NEW Header'}/>*/}
-{/*<Body titleForBody={'NEW Body'}/>*/}
-{/*<Footer titleForFooter={'NEW Footer'}/>*/}
+{/*<NewComponent students={students}/>*/
+}
+{/*<Header titleForHeader={'NEW Header'}/>*/
+}
+{/*<Body titleForBody={'NEW Body'}/>*/
+}
+{/*<Footer titleForFooter={'NEW Footer'}/>*/
+}
