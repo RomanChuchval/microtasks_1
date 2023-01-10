@@ -1,8 +1,15 @@
 import React from 'react';
-import {FilterType, MoneyType} from "../App";
+
+export type MoneyType = {
+    banknote: string
+    nominal: number
+    number: string
+}
+
+export type FilterType = 'all' | 'dollar' | 'ruble'
 
 type FilterMoneyType = {
-    currentMoney:Array<MoneyType>
+    Money:Array<MoneyType>
     filter: (params: FilterType) => void
 }
 
@@ -10,7 +17,7 @@ export const FilterMoney = (props: FilterMoneyType) => {
     return (
         <>
             <ul>
-                {props.currentMoney.map((element) => {
+                {props.Money.map((element) => {
                     return (
                         <li key={element.number}>
                             <span> {element.banknote} </span>
